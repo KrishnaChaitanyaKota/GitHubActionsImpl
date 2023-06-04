@@ -42,8 +42,17 @@ jobs:
       run: |
         echo Build Docker Image manually
         docker build -t springbootwithgithubactionsimplimage .
-        docker tag  springbootwithgithubactionsimplimage krishnachaitanya/springbootwithgithubactionsimplimage
-        docker push krishnachaitanya/springbootwithgithubactionsimplimage
+        docker tag  springbootwithgithubactionsimplimage ${{ secrets.DOCKERHUB_USERNAME }}/springbootwithgithubactionsimplimage
+        docker push ${{ secrets.DOCKERHUB_USERNAME }}/springbootwithgithubactionsimplimage
+        
+    - name: Build and Push Docker Image with Action
+      uses: docker/build-push-action@v4
+      with:
+        file: dockerfile
+        push: true
+        tag: ${{ secrets.DOCKERHUB_USERNAME }}/springbootwithgithubactionsimplimage:latest
+        
+
     
    
     
