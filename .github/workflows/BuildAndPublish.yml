@@ -48,9 +48,10 @@ jobs:
     - name: Build and Push Docker Image with Action
       uses: docker/build-push-action@v4
       with:
+        context: .
         file: dockerfile
-        push: true
-        tag: ${{ secrets.DOCKERHUB_USERNAME }}/springbootwithgithubactionsimplimage:latest
+        tags: latest
+        
         
 
     
