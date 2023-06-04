@@ -50,7 +50,7 @@ jobs:
       with:
         context: .
         file: dockerfile
-        tags: githubactions:latest
+        tags: githubactions:latestkc
         
         
 
