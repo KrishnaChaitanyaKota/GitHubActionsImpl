@@ -39,7 +39,7 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
         
     - name: Build and Push Docker Image manually
-      run:|
+      run: |
         echo Build Docker Image manually
         docker build -t SpringBootWithGitHubActionsImplImage .
         docker tag  SpringBootWithGitHubActionsImpl krishnachaitanya/SpringBootWithGitHubActionsImplImage
