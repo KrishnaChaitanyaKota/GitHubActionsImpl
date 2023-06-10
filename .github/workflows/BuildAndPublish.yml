@@ -52,6 +52,13 @@ jobs:
         file: dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/springbootwithgithubactionsimpl:${{ github.sha }}
+    - name: Azure Login
+      uses: azure/login@v1
+      with:
+        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+      run: |
+        az account show
+        az group list
     - name: Run Azure Commands
       run: |
         az account show
