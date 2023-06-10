@@ -55,7 +55,7 @@ jobs:
     - name: Azure Login
       uses: azure/login@v1
       with:
-        creds: '${{ secrets.AZURE_CREDENTIALS }}'
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Run Azure Commands
       run: |
         az account show
